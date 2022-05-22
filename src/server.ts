@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import http from "http";
 import { Server } from "socket.io";
+import path from "path";
 
 // read in contents of any environment variables in the .env file
 dotenv.config();
@@ -13,7 +14,13 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 app.get("/", (req, res) => {
-  res.status(200).sendFile(__dirname + "/index.html");
+  res
+    .status(200)
+    .sendFile(
+      path.resolve(
+        __dirname + "/../../udemy-multi-player-frontend/src/rooms/index.html"
+      )
+    );
 });
 
 io.on("connection", (socket) => {
