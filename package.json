@@ -8,7 +8,8 @@
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
     "start": "node dist/server.js",
-    "start:dev": "ts-node-dev src/server.ts"
+    "start:dev": "ts-node-dev src/server.ts",
+    "start:rooms": "ts-node-dev src/rooms/server.ts"
   },
   "license": "CC-BY-NC-ND-4.0",
   "devDependencies": {
